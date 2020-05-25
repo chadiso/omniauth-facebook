@@ -2,6 +2,8 @@
 
 📣 **NOTICE** We’re looking for maintainers to help keep this project up-to-date. If you are interested in helping please open an Issue expressing your interest. Thanks! 📣
 
+📣 **NOTICE** The original Facebook Strategy has been updated in order to pass-thru the state parameter (see the same approach has is used in https://github.com/zquestz/omniauth-google-oauth2). 📣
+
 **These notes are based on master, please see tags for README pertaining to specific releases.**
 
 Facebook OAuth2 Strategy for OmniAuth.
