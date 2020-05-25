@@ -24,7 +24,7 @@ module OmniAuth
 
       option :authorization_code_from_signed_request_in_cookie, nil
 
-      option :authorize_options, [:scope, :display, :auth_type]
+      option :authorize_options, [:scope, :display, :auth_type :state]
 
       uid { raw_info['id'] }
 
@@ -96,13 +96,15 @@ module OmniAuth
       # For example: /auth/facebook?display=popup
       def authorize_params
         super.tap do |params|
-          %w[display scope auth_type].each do |v|
+          %w[display scope auth_type state].each do |v|
             if request.params[v]
               params[v.to_sym] = request.params[v]
             end
           end
 
           params[:scope] ||= DEFAULT_SCOPE
+          
+          session['omniauth.state'] = params[:state] if params[:state]
         end
       end
 
