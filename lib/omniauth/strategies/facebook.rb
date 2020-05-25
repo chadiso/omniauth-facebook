@@ -24,7 +24,7 @@ module OmniAuth
 
       option :authorization_code_from_signed_request_in_cookie, nil
 
-      option :authorize_options, [:scope, :display, :auth_type :state]
+      option :authorize_options, [:scope, :display, :auth_type, :state]
 
       uid { raw_info['id'] }
 
